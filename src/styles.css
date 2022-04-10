@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: #f1eeee;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    line-height: 1.5;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  input::-webkit-input-placeholder {
+    color: #353e5a;
+  }
+  
+  input:-ms-input-placeholder {
+    color: #353e5a;
+  }
+  
+  input::-ms-input-placeholder {
+    color: #353e5a;
+  }
+  
+  input::placeholder {
+    color: #353e5a;
+  }
+  
+  input::-moz-placeholder {
+    color: #353e5a;
+  }
+  
+  input:-ms-input-placeholder {
+    color: #353e5a;
+  }
+  /*# sourceMappingURL=styles.css.map */

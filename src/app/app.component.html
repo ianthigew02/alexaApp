@@ -1,10 +1,8 @@
 <div id="app">
   <nav class="navbar navbar-expand navbar-dark bg-primary">
-    <a href="#" class="navbar-brand">Alexa</a>
+    <a href="#" class="navbar-brand">My Assistant</a>
     <ul class="navbar-nav mr-auto" routerLinkActive="active">
-      <li class="nav-item">
-        <a href="/home" class="nav-link" routerLink="home">Home </a>
-      </li>
+
       <li class="nav-item" *ngIf="showAdminBoard">
         <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
       </li>
@@ -18,10 +16,13 @@
 
     <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
       <li class="nav-item">
-        <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
+        <a href="/home" class="navbar-brand" routerLink="home">Home </a>
       </li>
       <li class="nav-item">
-        <a href="/login" class="nav-link" routerLink="login">Login</a>
+        <a href="/register" class="navbar-brand" routerLink="register">Register</a>
+      </li>
+      <li class="nav-item">
+        <a href="/login" class="navbar-brand" routerLink="login">Login</a>
       </li>
     </ul>
 
@@ -36,14 +37,31 @@
   </nav>
 
   <div class="container">
-    <router-outlet></router-outlet>
+    
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/src/app/components/todo-list" routerLink="todo">To Do list</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Alarm</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Music</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">News</a>
+        </li>
+      </ul>
+
+      <router-outlet></router-outlet>
+
+
+
   </div>
+
   <nav class="navbar fixed-bottom navbar-dark bg-primary">
-    <a href="#" class="navbar-brand">Term & Conditions</a>
+    <a href="#" class="navbar-brand">Language</a>
     <ul class="nav justify-content-end" routerLinkActive="active">
-      <li class="nav-item">
-        <a href="/home" class="navbar-brand" routerLink="home">Help </a>
-      </li>
       <li class="nav-item" >
         <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
       </li>
@@ -54,9 +72,15 @@
         <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
       </li>
     </ul>
-    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+    <ul class="nav justify-content-end" *ngIf="!isLoggedIn">
       <li class="nav-item">
-        <a href="/register" class="navbar-brand" routerLink="register">Customer Support</a>
+        <a href="#" class="navbar-brand" routerLink="register">Help</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="navbar-brand" routerLink="register">Terms & Conditions</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="navbar-brand" routerLink="register">Customer Support</a>
       </li>
     </ul>
   </nav>

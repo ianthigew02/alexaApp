@@ -1,0 +1,13 @@
+<section class="container-list">
+  <div class="wrapper-list">
+    <h1 class="wrapper-list__title">{{ title }}</h1>
+  </div>
+
+  <app-input-card></app-input-card>
+
+  <ul>
+    <li *ngFor="let todoItem of todoList">
+      <app-card [item]="todoItem"> </app-card>
+    </li>
+  </ul>
+</section>
