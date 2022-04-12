@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { TokenStorageService } from './_services/token-storage.service';
+import { DomSanitizer } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-root',
@@ -12,8 +14,10 @@ export class AppComponent {
   showAdminBoard = false;
   showModeratorBoard = false;
   username?: string;
+  bg:any;
 
-  constructor(private tokenStorageService: TokenStorageService) { }
+
+  constructor(private tokenStorageService: TokenStorageService,private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
@@ -27,6 +31,8 @@ export class AppComponent {
 
       this.username = user.username;
     }
+    this.bg = this.sanitizer.bypassSecurityTrustStyle('linear-gradient(#333333, #000000)');
+
   }
 
   logout(): void {

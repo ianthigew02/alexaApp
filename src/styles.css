@@ -40,4 +40,12 @@
   input:-ms-input-placeholder {
     color: #353e5a;
   }
+
+  .box {
+    padding: 10px 10px;
+  }
+
+  .box h5 {
+    font-size: 18px;
+  }
   /*# sourceMappingURL=styles.css.map */

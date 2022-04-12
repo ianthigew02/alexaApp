@@ -46,10 +46,10 @@
           <a class="nav-link" href="#">Alarm</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Music</a>
+          <a class="nav-link" href="/src/app/components/music-home" routerLink="music">Music</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">News</a>
+          <a class="nav-link" href="/src/app/topheading" routerLink="topheading">News</a>
         </li>
       </ul>
 
@@ -61,17 +61,6 @@
 
   <nav class="navbar fixed-bottom navbar-dark bg-primary">
     <a href="#" class="navbar-brand">Language</a>
-    <ul class="nav justify-content-end" routerLinkActive="active">
-      <li class="nav-item" >
-        <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
-      </li>
-      <li class="nav-item" *ngIf="showModeratorBoard">
-        <a href="/mod" class="nav-link" routerLink="mod">Moderator Board</a>
-      </li>
-      <li class="nav-item">
-        <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
-      </li>
-    </ul>
     <ul class="nav justify-content-end" *ngIf="!isLoggedIn">
       <li class="nav-item">
         <a href="#" class="navbar-brand" routerLink="register">Help</a>

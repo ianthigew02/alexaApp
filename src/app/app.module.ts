@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -15,9 +15,18 @@ import { InputCardComponent } from './components/input-card/input-card.component
 import { CardComponent } from './components/card/card.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
-import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { MaterialModule } from './material/material/material.module';
+import { TopheadingComponent } from './topheading/topheading.component';
+import { TechnewsComponent } from './technews/technews.component';
+import { BusinessnewsComponent } from './businessnews/businessnews.component';
+import { NewsapiservicesService } from './service/newsapiservices.service';
+// for HttpClient import:
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
+
+import {NgxPaginationModule} from 'ngx-pagination';
+
 
 
 
@@ -33,7 +42,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BoardUserComponent,
     InputCardComponent,
     CardComponent,
-    TodoListComponent
+    TodoListComponent,
+    SidebarComponent,
+    TopheadingComponent,
+    TechnewsComponent,
+    BusinessnewsComponent
+
   ],
   imports: [
     AppRoutingModule,
@@ -41,9 +55,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     BrowserModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MaterialModule,
+    BrowserAnimationsModule,
+    LoadingBarHttpClientModule,
+    NgxPaginationModule
+
   ],
-  providers: [authInterceptorProviders],
+  providers: [NewsapiservicesService],
   bootstrap: [AppComponent]
 })
 

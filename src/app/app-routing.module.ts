@@ -8,6 +8,9 @@ import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { TopheadingComponent } from './topheading/topheading.component';
+import { BusinessnewsComponent } from './businessnews/businessnews.component';
+import { TechnewsComponent } from './technews/technews.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -19,6 +22,9 @@ const routes: Routes = [
   { path: 'admin', component: BoardAdminComponent },
   {path: 'todo', component: TodoListComponent},
   {path: 'login/register', component:RegisterComponent},
+  {path: 'topheading', component: TopheadingComponent},
+  {path: 'topheading/businessnews', component: BusinessnewsComponent},
+  {path: 'topheading/technews', component: TechnewsComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
