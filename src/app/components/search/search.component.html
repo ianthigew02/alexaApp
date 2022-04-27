@@ -1,0 +1,16 @@
+<div class="row mb-5">
+  <div class="col">
+    <input #term type="text" (keyup)="search(term.value)" class="form-control" placeholder="Search by artist">
+  </div>
+</div>
+
+<!-- <div class="card-columns mt-5">
+  <div class="card" *ngFor="let artist of artists">
+    <img [src]="artist.images | noimage" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ artist.name }}</h5>
+    </div>
+  </div>
+</div> -->
+<app-loading *ngIf="loading"></app-loading>
+<app-cards [items]="artists" class="m-5"></app-cards>

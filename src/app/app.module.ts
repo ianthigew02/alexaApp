@@ -26,6 +26,13 @@ import { NewsapiservicesService } from './service/newsapiservices.service';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 
 import {NgxPaginationModule} from 'ngx-pagination';
+import { SearchComponent } from './components/search/search.component';
+import { ArtistComponent } from './components/artist/artist.component';
+import { NoimagePipe } from './pipes/noimage.pipe';
+import { HomePipe } from './pipes/home.pipe';
+import { LoadingComponent } from './components/shared/loading/loading.component';
+import { CardsComponent } from './components/cards/cards.component';
+import { SpotifyService } from './service/spotify.service';
 
 
 
@@ -46,7 +53,13 @@ import {NgxPaginationModule} from 'ngx-pagination';
     SidebarComponent,
     TopheadingComponent,
     TechnewsComponent,
-    BusinessnewsComponent
+    BusinessnewsComponent,
+    SearchComponent,
+    ArtistComponent,
+    NoimagePipe,
+    HomePipe,
+    CardsComponent,
+    LoadingComponent
 
   ],
   imports: [
@@ -62,7 +75,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     NgxPaginationModule
 
   ],
-  providers: [NewsapiservicesService],
+  providers: [NewsapiservicesService,SpotifyService],
   bootstrap: [AppComponent]
 })
 

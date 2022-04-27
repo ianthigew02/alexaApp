@@ -11,6 +11,8 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TopheadingComponent } from './topheading/topheading.component';
 import { BusinessnewsComponent } from './businessnews/businessnews.component';
 import { TechnewsComponent } from './technews/technews.component';
+import { SearchComponent } from './components/search/search.component';
+import { ArtistComponent } from './components/artist/artist.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -25,6 +27,8 @@ const routes: Routes = [
   {path: 'topheading', component: TopheadingComponent},
   {path: 'topheading/businessnews', component: BusinessnewsComponent},
   {path: 'topheading/technews', component: TechnewsComponent},
+  { path: 'search', component: SearchComponent },
+  { path: 'artist/:id', component: ArtistComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
