@@ -33,6 +33,12 @@ import { HomePipe } from './pipes/home.pipe';
 import { LoadingComponent } from './components/shared/loading/loading.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { SpotifyService } from './service/spotify.service';
+import { AlarmHomeComponent } from './alarm-home/alarm-home.component';
+import { AddAlarm } from './add-alarm/add-alarm.component';
+//import { HttpModule, JsonpModule } from '@angular/http';
+import { QuoteService } from './_services/quote.service';
+import { AlarmService } from './_services/alarm.service';
+import { TimerService } from './_services/timer.service';
 
 
 
@@ -59,7 +65,9 @@ import { SpotifyService } from './service/spotify.service';
     NoimagePipe,
     HomePipe,
     CardsComponent,
-    LoadingComponent
+    LoadingComponent,
+    AlarmHomeComponent,
+    AddAlarm
 
   ],
   imports: [
@@ -72,10 +80,12 @@ import { SpotifyService } from './service/spotify.service';
     MaterialModule,
     BrowserAnimationsModule,
     LoadingBarHttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+
+
 
   ],
-  providers: [NewsapiservicesService,SpotifyService],
+  providers: [NewsapiservicesService,SpotifyService,TimerService,AlarmService,QuoteService],
   bootstrap: [AppComponent]
 })
 
