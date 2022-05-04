@@ -13,6 +13,7 @@ import { BusinessnewsComponent } from './businessnews/businessnews.component';
 import { TechnewsComponent } from './technews/technews.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArtistComponent } from './components/artist/artist.component';
+import { AlarmHomeComponent } from './alarm-home/alarm-home.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -22,13 +23,15 @@ const routes: Routes = [
   { path: 'user', component: BoardUserComponent },
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
-  {path: 'todo', component: TodoListComponent},
+  {path: 'home/todo', component: TodoListComponent},
   {path: 'login/register', component:RegisterComponent},
-  {path: 'topheading', component: TopheadingComponent},
-  {path: 'topheading/businessnews', component: BusinessnewsComponent},
-  {path: 'topheading/technews', component: TechnewsComponent},
-  { path: 'search', component: SearchComponent },
+  {path: 'home/home/topheading', component: TopheadingComponent},
+  {path: 'home/home/topheading/businessnews', component: BusinessnewsComponent},
+  {path: 'home/home/topheading/technews', component: TechnewsComponent},
+  { path: 'home/home/home/home/search', component: SearchComponent },
+  { path: 'artist/search', component: SearchComponent },
   { path: 'artist/:id', component: ArtistComponent },
+  {path: 'home/home/alarm-home', component: AlarmHomeComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

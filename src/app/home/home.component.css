@@ -11,3 +11,29 @@
 {
   margin-left: 25px;
 }
+
+.btn {
+  background-color: aliceblue;
+  color: black;
+}
+
+.container {
+  width: 1000px;
+}
+
+.col-sm-5{
+  width: 90px;
+}
+
+.row{
+  size: 2000px;
+}
+
+.h6 {
+  color:  rgb(188, 125, 7);
+}
+
+.text-center {
+  background-color: #DFC194;
+  height: 400px;
+}

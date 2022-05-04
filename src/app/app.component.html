@@ -1,6 +1,6 @@
 <div id="app">
-  <nav class="navbar navbar-expand navbar-dark bg-primary">
-    <a href="#" class="navbar-brand">My Assistant</a>
+  <nav class="navbar navbar-expand">
+    <a style="color: aliceblue;" href="#" class="navbar-brand">My Assistant</a>
     <ul class="navbar-nav mr-auto" routerLinkActive="active">
 
       <li class="nav-item" *ngIf="showAdminBoard">
@@ -16,13 +16,23 @@
 
     <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
       <li class="nav-item">
-        <a href="/home" class="navbar-brand" routerLink="home">Home </a>
+        <a style="color: aliceblue;" href="/home" class="navbar-brand" routerLink="home">Home </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a style="color: aliceblue;" class="navbar-brand"  id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+          Functions
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/src/app/components/todo-list" routerLink="todo">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
       </li>
       <li class="nav-item">
-        <a href="/register" class="navbar-brand" routerLink="register">Register</a>
+        <a style="color: aliceblue;" href="/register" class="navbar-brand" routerLink="register">Register</a>
       </li>
       <li class="nav-item">
-        <a href="/login" class="navbar-brand" routerLink="login">Login</a>
+        <a style="color: aliceblue;" href="/login" class="navbar-brand" routerLink="login">Login</a>
       </li>
     </ul>
 
@@ -38,20 +48,6 @@
 
   <div class="container">
     
-      <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/src/app/components/todo-list" routerLink="todo">To Do list</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Alarm</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/src/app/components/search" routerLink="search">Music</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/src/app/topheading" routerLink="topheading">News</a>
-        </li>
-      </ul>
 
       <router-outlet></router-outlet>
 
@@ -59,17 +55,17 @@
 
   </div>
 
-  <nav class="navbar fixed-bottom navbar-dark bg-primary">
-    <a href="#" class="navbar-brand">Language</a>
+  <nav class="navbar fixed-bottom">
+    <a style="color: aliceblue;" href="#" class="navbar-brand">Language</a>
     <ul class="nav justify-content-end" *ngIf="!isLoggedIn">
       <li class="nav-item">
-        <a href="#" class="navbar-brand" routerLink="register">Help</a>
+        <a style="color: aliceblue;" href="#" class="navbar-brand" routerLink="register">Help</a>
       </li>
       <li class="nav-item">
-        <a href="#" class="navbar-brand" routerLink="register">Terms & Conditions</a>
+        <a style="color: aliceblue;" href="#" class="navbar-brand" routerLink="register">Terms & Conditions</a>
       </li>
       <li class="nav-item">
-        <a href="#" class="navbar-brand" routerLink="register">Customer Support</a>
+        <a style="color: aliceblue;" href="#" class="navbar-brand" routerLink="register">Customer Support</a>
       </li>
     </ul>
   </nav>

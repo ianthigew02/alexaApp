@@ -11,13 +11,13 @@ export class NewsapiservicesService {
   constructor(private _http:HttpClient) { }
 
   // newsApiUrl
-  newsApiUrl = "https://newsapi.org/v2/top-headlines?country=gb&apiKey=1c5e2237fcd342bf86e1cc62c9d23654";
+  newsApiUrl = "https://newsapi.org/v2/top-headlines?sources=CNN,bloomberg,fox-news,newsy,cnbc,abc-news&sortBy=popularity&apiKey=bbbd56acf7054e27a34704667b4dc5b6";
 
   // technewsapiurl
-  techApiUrL = "https://newsapi.org/v2/top-headlines?country=gb&category=technology&apiKey=1c5e2237fcd342bf86e1cc62c9d23654";
+  techApiUrL = "https://newsapi.org/v2/top-headlines?sources=fox-news&sortBy=popularity&apiKey=bbbd56acf7054e27a34704667b4dc5b6";
 
   // businessnewsapiurl
-  businessApiUrL = "https://newsapi.org/v2/top-headlines?country=gb&category=business&apiKey=1c5e2237fcd342bf86e1cc62c9d23654";
+  businessApiUrL = "https://newsapi.org/v2/top-headlines?sources=CNN&sortBy=popularity&apiKey=bbbd56acf7054e27a34704667b4dc5b6";
 
   // topheading()
   topHeading():Observable<any>

@@ -1,0 +1,45 @@
+            <!-- Compiled and minified CSS -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+            <!-- Compiled and minified JavaScript -->
+    <div class="header">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>   
+        <div class="body">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="alarmtext" #alarmtext type="text" data-length="30" required>
+                    <label for="alarmtext">Alarm Note</label>
+                </div>
+            </div>
+            <div class="collapsible-row">
+                <div class="input-field col s9">
+                    <input id="timepicker" #timepicker type="text" class="timepicker">
+                    <label for="timepicker">Set Time</label>
+                </div>
+                <div class="input-field col s3">
+                    <a class="btn waves-effect waves-light" (click)="add()">Add</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="switch col">
+                    <label>
+                        No Repeat
+                        <input type="checkbox" #repeatcheckbox checked (change)="repeatchange(repeatcheckbox.checked.toString())">
+                        <span class="lever"></span>
+                        Repeat
+                    </label>
+                </div>
+            </div>
+            <div class="row" *ngIf='!repeatcheckbox.checked'>
+                <ul class="pagination">
+                    <li *ngFor="let day of JSObject.keys(weekdays);" [ngClass]="{'grey lighten-3':!weekdays[day], 'active':weekdays[day]}" (click)="weekdays[day] = (weekdays[day] ? false :true);"
+                        class="waves-effect">
+                        <a>
+                            <small>{{day}}</small>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+    </div>
+    
