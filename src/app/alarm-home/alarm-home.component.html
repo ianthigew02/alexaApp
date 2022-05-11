@@ -1,49 +1,10 @@
+<h1 class="h1">Set up Alarm </h1>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-
-<script async src="/main.bundle.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-
-
-<div class="container">
-
-  <div class="row">
-    <div class="col s12 offset-m2 m8 offset-l3 l6 offset-xl3 xl6">
-      <div class="card-panel center-align">
-        <h3>
-          {{timenow | date:'yyyy:MM:dd hh:mm a'}}
-        </h3>
-      </div>
-      <div>
-        <add-alarm></add-alarm>
-      </div>
-      <div>
-        <ul class="collection">
-          <li class="collection-item scale-transition scale-in" *ngFor="let alarm of alarms; let i = index" id="{{alarm.id}}">
-            <span class="black-text title">{{alarm.note}}</span>
-            <div class="row" style="margin-bottom: 0px !important;">
-              <div class="col s10">
-                <ul class="pagination" [hidden]='alarm.isrepeat'>
-                  <li *ngFor="let day of JSObject.keys(alarm.weekdays);" [ngClass]="{'grey lighten-3':!alarm.weekdays[day], 'active':alarm.weekdays[day]}"
-                    class="waves-effect">
-                    <a>
-                      <small>{{day}}</small>
-                    </a>
-                  </li>
-                </ul>
-                <div class="blue-text">
-                  <h5>{{alarm.hour12 | number:'2.0-0'}} : {{alarm.mins | number:'2.0-0'}} {{alarm.ampm}}</h5>
-                </div>
-              </div>
-              <div class="col s2 right-align">
-                <a class="btn-flat btn-floating waves-effect waves-light red lighten-5" (click)="alarmService.removeAlarm(alarm, i);">
-                  <i class="red-text material-icons left">delete</i> Delete
-                </a>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+<section class="app-alarm-home">
+  <app-clock [now]="clock$ | async"></app-clock>
+  <app-alarm-input (add)="handleAlarmAdd($event)"></app-alarm-input>
+  <app-alarm-list [dataSource]="alarms$ | async"
+                  (toggleAlarm)="handleAlarmToggle($event)"
+                  (cancelAlarm)="handleAlarmCancel($event)"></app-alarm-list>
+</section>
+<audio #alarmAudio src="../assets/audio/clock03.wav" type="audio/wav" loop id="alarm_audio"></audio>

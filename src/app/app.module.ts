@@ -34,12 +34,38 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
 import { CardsComponent } from './components/cards/cards.component';
 import { SpotifyService } from './service/spotify.service';
 import { AlarmHomeComponent } from './alarm-home/alarm-home.component';
-import { AddAlarm } from './add-alarm/add-alarm.component';
 //import { HttpModule, JsonpModule } from '@angular/http';
-import { QuoteService } from './_services/quote.service';
 import { AlarmService } from './_services/alarm.service';
-import { TimerService } from './_services/timer.service';
+import { ClockComponent } from './clock/clock.component';
+import { AlarmInputComponent } from './alarm-input/alarm-input.component';
+import { AlarmListComponent } from './alarm-list/alarm-list.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './store';
+import { OWL_DATE_TIME_FORMATS, OwlDateTimeModule, OwlNativeDateTimeModule } from '@danielmoncada/angular-datetime-picker';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatTableModule} from '@angular/material/table';
+import {MatInputModule } from  '@angular/material/input';
+import {MatIconModule } from  '@angular/material/icon';
 
+
+const MY_NATIVE_FORMATS = {
+    fullPickerInput: {
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric'
+    },
+    datePickerInput: {year: 'numeric', month: 'numeric', day: 'numeric'},
+    timePickerInput: {hour: 'numeric', minute: 'numeric', second: 'numeric'},
+    monthYearLabel: {year: 'numeric', month: 'short'},
+    dateA11yLabel: {year: 'numeric', month: 'long', day: 'numeric'},
+    monthYearA11yLabel: {year: 'numeric', month: 'long'},
+};
 
 
 
@@ -67,7 +93,9 @@ import { TimerService } from './_services/timer.service';
     CardsComponent,
     LoadingComponent,
     AlarmHomeComponent,
-    AddAlarm
+    ClockComponent,
+    AlarmInputComponent,
+    AlarmListComponent
 
   ],
   imports: [
@@ -82,10 +110,25 @@ import { TimerService } from './_services/timer.service';
     LoadingBarHttpClientModule,
     NgxPaginationModule,
 
+    // NG Store
+    StoreModule.forRoot(reducers),
 
+    // OwlDateTime Picker
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule,
 
+    // Materials
+    MatIconModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatTableModule,
+    MatSnackBarModule
   ],
-  providers: [NewsapiservicesService,SpotifyService,TimerService,AlarmService,QuoteService],
+  providers: [ {provide: OWL_DATE_TIME_FORMATS, useValue: MY_NATIVE_FORMATS},
+    NewsapiservicesService,SpotifyService,AlarmService 
+  ],
   bootstrap: [AppComponent]
 })
 

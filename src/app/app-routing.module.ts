@@ -29,7 +29,7 @@ const routes: Routes = [
   {path: 'home/home/topheading/businessnews', component: BusinessnewsComponent},
   {path: 'home/home/topheading/technews', component: TechnewsComponent},
   { path: 'home/home/home/home/search', component: SearchComponent },
-  { path: 'artist/search', component: SearchComponent },
+  { path: 'artist/:id/search', component: SearchComponent },
   { path: 'artist/:id', component: ArtistComponent },
   {path: 'home/home/alarm-home', component: AlarmHomeComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' }

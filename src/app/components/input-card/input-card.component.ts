@@ -11,7 +11,7 @@ import { TodoListService } from 'src/app/_services/todo-list.service';
 })
 export class InputCardComponent implements OnInit {
   faPlus = faPlus;
-  messageError = 'Não é permitido campo vazio';
+  messageError = 'Please fill the todo';
 
   description = new FormControl('');
 

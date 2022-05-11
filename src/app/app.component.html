@@ -1,3 +1,14 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+</head>
+
+
+
 <div id="app">
   <nav class="navbar navbar-expand">
     <a style="color: aliceblue;" href="#" class="navbar-brand">My Assistant</a>
@@ -19,9 +30,9 @@
         <a style="color: aliceblue;" href="/home" class="navbar-brand" routerLink="home">Home </a>
       </li>
       <li class="nav-item dropdown">
-        <a style="color: aliceblue;" class="navbar-brand"  id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+        <button style="background-color: #1A1D67; color: aliceblue; border: #1A1D67;" class="navbar-brand"  id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Functions
-        </a>
+        </button>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="/src/app/components/todo-list" routerLink="todo">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
@@ -29,10 +40,7 @@
         </div>
       </li>
       <li class="nav-item">
-        <a style="color: aliceblue;" href="/register" class="navbar-brand" routerLink="register">Register</a>
-      </li>
-      <li class="nav-item">
-        <a style="color: aliceblue;" href="/login" class="navbar-brand" routerLink="login">Login</a>
+        <a style="color: aliceblue;" href="/" class="navbar-brand" routerLink="register">Account</a>
       </li>
     </ul>
 

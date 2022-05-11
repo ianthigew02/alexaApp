@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TodoListService } from 'src/app/services/todo-list.service';
+import { TodoListService } from 'src/app/_services/todo-list.service';
 import { mockTodoList } from 'src/__mocks__/todoList.spec';
 import { TodoListComponent } from './todo-list.component';
 
