@@ -1,7 +1,7 @@
 @import "../../../styles/variables";
 
 .container-list {
-  background-color: map-get($colors, "primary-color");
+  background-color: #f1eeee;
   border-radius: $global-border-radius;
   height: auto;
   margin-top: 5rem;
@@ -13,7 +13,7 @@
 
 .wrapper-list {
   padding-top: 1rem;
-
+  background-color: #f1eeee;
   &__title {
     text-align: center;
     font-size: 2.2rem;

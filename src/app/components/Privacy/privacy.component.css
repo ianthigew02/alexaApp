@@ -1,0 +1,39 @@
+.login,
+.image {
+  min-height: 100vh;
+}
+.bg-image {
+  background-image: url('https://therichpost.com/wp-content/uploads/2021/02/login-split.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+.invalid-feedback
+{
+  margin-left: 25px;
+}
+
+.btn {
+  background-color: aliceblue;
+  color: black;
+}
+
+.container {
+  width: 1000px;
+}
+
+.col-sm-5{
+  width: 90px;
+}
+
+.row{
+  size: 2000px;
+}
+
+.h6 {
+  color:  rgb(188, 125, 7);
+}
+
+.text-center {
+  background-color: #DFC194;
+  height: 400px;
+}

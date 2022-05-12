@@ -14,6 +14,7 @@ import { TechnewsComponent } from './technews/technews.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { AlarmHomeComponent } from './alarm-home/alarm-home.component';
+import { PrivacyComponent } from './components/Privacy/privacy.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -25,13 +26,14 @@ const routes: Routes = [
   { path: 'admin', component: BoardAdminComponent },
   {path: 'home/todo', component: TodoListComponent},
   {path: 'login/register', component:RegisterComponent},
-  {path: 'home/home/topheading', component: TopheadingComponent},
-  {path: 'home/home/topheading/businessnews', component: BusinessnewsComponent},
-  {path: 'home/home/topheading/technews', component: TechnewsComponent},
-  { path: 'home/home/home/home/search', component: SearchComponent },
+  {path: 'home/topheading', component: TopheadingComponent},
+  {path: 'home/topheading/businessnews', component: BusinessnewsComponent},
+  {path: 'home/topheading/technews', component: TechnewsComponent},
+  { path: 'home/search', component: SearchComponent },
   { path: 'artist/:id/search', component: SearchComponent },
   { path: 'artist/:id', component: ArtistComponent },
-  {path: 'home/home/alarm-home', component: AlarmHomeComponent},
+  {path: 'home/alarm-home', component: AlarmHomeComponent},
+  {path: 'privacy', component: PrivacyComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
