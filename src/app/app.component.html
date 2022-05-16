@@ -17,18 +17,12 @@
     <span class="navbar-toggler-icon"></span>
     <ul class="navbar-nav mr-auto" routerLinkActive="active">
 
-      <li class="nav-item" *ngIf="showAdminBoard">
-        <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
-      </li>
-      <li class="nav-item" *ngIf="showModeratorBoard">
-        <a href="/mod" class="nav-link" routerLink="mod">Moderator Board</a>
-      </li>
       <li class="nav-item">
-        <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
+        <a href="/user" class="nav-link" *ngIf="" routerLink="user">User</a>
       </li>
     </ul>
 
-    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+    <ul class="navbar-nav ml-auto" *ngIf="currentUser">
       <li class="nav-item">
         <a style="color: aliceblue;" href="/home" class="navbar-brand" routerLink="home">Home </a>
       </li>
@@ -42,23 +36,18 @@
           <a class="dropdown-item" href="/home/search" routerLink="home/search">Music</a>
           <a class="dropdown-item" href="/home/topheading" routerLink="home/topheading">News</a>
           <a class="dropdown-item" href="/home/todo" routerLink="home/todo">To-Do List</a>
-          <a class="dropdown-item" href="#">Skills & Games</a>
+          <a class="dropdown-item" href="/home/Games" routerLink="games">Skills & Games</a>
 
         </ul>
       </li>
       <li class="nav-item">
-        <a style="color: aliceblue;" href="/" class="navbar-brand" routerLink="register">Account</a>
+        <a style="color: aliceblue;" href="/profile" class="navbar-brand" routerLink="profile">Account</a>
+      </li>
+      <li class="nav-item">
+        <a style="color: aliceblue;" (click)="logout()" class="navbar-brand" routerLink="profile">Logout</a>
       </li>
     </ul>
 
-    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
-      <li class="nav-item">
-        <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
-      </li>
-      <li class="nav-item">
-        <a href class="nav-link" (click)="logout()">LogOut</a>
-      </li>
-    </ul>
   </nav>
 
   <div class="container">
@@ -72,7 +61,7 @@
 
   <nav class="navbar fixed-bottom">
     <a style="color: aliceblue;" href="#" class="navbar-brand">Language</a>
-    <ul class="nav justify-content-end" *ngIf="!isLoggedIn">
+    <ul class="nav justify-content-end">
       <li class="nav-item">
         <a style="color: aliceblue;" href="#" class="navbar-brand" routerLink="register">Help</a>
       </li>

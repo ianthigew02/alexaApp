@@ -8,9 +8,6 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
-import { BoardAdminComponent } from './board-admin/board-admin.component';
-import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
-import { BoardUserComponent } from './board-user/board-user.component';
 import { InputCardComponent } from './components/input-card/input-card.component';
 import { CardComponent } from './components/card/card.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
@@ -49,6 +46,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatInputModule } from  '@angular/material/input';
 import {MatIconModule } from  '@angular/material/icon';
+import { fakeBackendProvider } from './_helpers/fake-backend';
+import { JwtInterceptor } from './_helpers/jwt.interceptor';
+import { ErrorInterceptor } from './_helpers/error.interceptor';
+import { AlertComponent } from './components/alert/alert.component';
 
 
 const MY_NATIVE_FORMATS = {
@@ -76,9 +77,6 @@ const MY_NATIVE_FORMATS = {
     RegisterComponent,
     HomeComponent,
     ProfileComponent,
-    BoardAdminComponent,
-    BoardModeratorComponent,
-    BoardUserComponent,
     InputCardComponent,
     CardComponent,
     TodoListComponent,
@@ -95,7 +93,8 @@ const MY_NATIVE_FORMATS = {
     AlarmHomeComponent,
     ClockComponent,
     AlarmInputComponent,
-    AlarmListComponent
+    AlarmListComponent,
+    AlertComponent
 
   ],
   imports: [
@@ -126,8 +125,10 @@ const MY_NATIVE_FORMATS = {
     MatTableModule,
     MatSnackBarModule
   ],
-  providers: [ {provide: OWL_DATE_TIME_FORMATS, useValue: MY_NATIVE_FORMATS},
-    NewsapiservicesService,SpotifyService,AlarmService 
+  providers: [ {provide: OWL_DATE_TIME_FORMATS, useValue: MY_NATIVE_FORMATS}, 
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    NewsapiservicesService,SpotifyService,AlarmService,fakeBackendProvider
   ],
   bootstrap: [AppComponent]
 })
