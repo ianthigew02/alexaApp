@@ -1,12 +1,41 @@
-<div class="container" *ngIf="currentUser; else loggedOut">
+<div class="container" *ngIf="currentUser;">
+  <h1 class="h1">
+    <strong>Profile</strong> 
+  </h1>
   <header class="jumbotron">
-    <h3>
-      <strong>{{ currentUser.username }}</strong> Profile
-    </h3>
+    <div class="row align-items-top">
+      <div class="col">
+        <h3 >Personal Info</h3>
+      </div>
+      <div class="col">
+      </div>
+      <div class="col">
+        <h3>Settings</h3>
+      </div>
+    </div>
+    
+    <div class="row align-items-top">
+      <div class="col">
+        <ul class=" list-group-flush">
+          <li class="list-group-item"> First Name: {{currentUser.firstName}}</li>
+          <li class="list-group-item"> Last Name: {{currentUser.lastName}}</li>
+          <li class="list-group-item"> Email: {{currentUser.username}}</li>
+          <li class="list-group-item"> Age: {{currentUser.age}}</li>
+    
+        </ul>
+      </div>
+      <div class="col">
+
+      </div>
+      <div class="col">
+        <ul class="list-group-flush">
+          <li class="list-group-item"><button class="btn btn-link" href="" routerLink="">More on Terms&Conditions</button></li>
+          <li class="list-group-item"><button class="btn btn-link" href="" routerLink="">Privacy Settings</button></li>
+          <li class="list-group-item"><button class="btn btn-link" (click)="deleteUser(currentUser.id)">Delete Account</button></li>
+          <li class="list-group-item"><button class="btn btn-link" href="" routerLink="">Log Out</button></li>
+        </ul>
+      </div>
+    </div>
   </header>
   
 </div>
-
-<ng-template #loggedOut>
-  Please login.
-</ng-template>

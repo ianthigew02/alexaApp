@@ -8,7 +8,7 @@
 
 .card__content {
   background-color: map-get($colors, "main-color");
-  border-left: 3px solid map-get($colors, "third-color");
+  //border-left: 3px solid map-get($colors, "third-color");
   border-radius: $global-border-radius;
   height: auto;
   min-height: 3rem;

@@ -37,11 +37,22 @@ label {
   
 }
 .bg-image {
-  background-image: url('https://therichpost.com/wp-content/uploads/2021/02/login-split.jpg');
+  
   background-size: cover;
   background-position: center center;
+  background-color: #1A1D67;
 }
 .invalid-feedback
 {
   margin-left: 25px;
 }
+
+.h1{
+  color:rgb(232, 236, 239);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 300px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 66px;
+}
+

@@ -11,8 +11,9 @@ import { TechnewsComponent } from './technews/technews.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { AlarmHomeComponent } from './alarm-home/alarm-home.component';
-import { PrivacyComponent } from './components/Privacy/privacy.component';
-import { GamesComponent } from './components/games/game.component';
+import { PrivacyComponent } from './components/privacy/privacy.component';
+import { GamesComponent } from './components/game/game.component';
+import { GamesListComponent } from './components/games-list/games-list.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -30,6 +31,10 @@ const routes: Routes = [
   { path: 'home/alarm-home', component: AlarmHomeComponent},
   { path: 'privacy', component: PrivacyComponent},
   { path:'games', component: GamesComponent},
+  { path:'games/games-list', component: GamesListComponent},
+  { path:'games-list/games', component: GamesComponent},
+
+
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 
