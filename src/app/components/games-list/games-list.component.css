@@ -12,3 +12,8 @@
   margin-right: auto;
   border: black;
 }
+
+.img-thumb {
+  width: 60px;
+  height: 60px;
+}
