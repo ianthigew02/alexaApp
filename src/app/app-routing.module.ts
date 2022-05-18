@@ -18,7 +18,7 @@ import { GamesListComponent } from './components/games-list/games-list.component
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'login/home', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'profile', component: ProfileComponent },
   {path: 'home/todo', component: TodoListComponent},
   {path: 'login/register', component:RegisterComponent},
