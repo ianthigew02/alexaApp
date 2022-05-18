@@ -16,12 +16,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MaterialModule } from './material/material/material.module';
 import { TopheadingComponent } from './topheading/topheading.component';
-import { TechnewsComponent } from './technews/technews.component';
-import { BusinessnewsComponent } from './businessnews/businessnews.component';
+import { FoxnewsComponent } from './foxnews/foxnews.component';
+import { CNNnewsComponent } from './cnn-news/cnn-news.component';
 import { NewsapiservicesService } from './service/newsapiservices.service';
 // for HttpClient import:
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
-
 import {NgxPaginationModule} from 'ngx-pagination';
 import { SearchComponent } from './components/search/search.component';
 import { ArtistComponent } from './components/artist/artist.component';
@@ -31,7 +30,6 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
 import { CardsComponent } from './components/cards/cards.component';
 import { SpotifyService } from './service/spotify.service';
 import { AlarmHomeComponent } from './alarm-home/alarm-home.component';
-//import { HttpModule, JsonpModule } from '@angular/http';
 import { AlarmService } from './_services/alarm.service';
 import { ClockComponent } from './clock/clock.component';
 import { AlarmInputComponent } from './alarm-input/alarm-input.component';
@@ -84,8 +82,8 @@ const MY_NATIVE_FORMATS = {
     TodoListComponent,
     SidebarComponent,
     TopheadingComponent,
-    TechnewsComponent,
-    BusinessnewsComponent,
+    FoxnewsComponent,
+    CNNnewsComponent,
     SearchComponent,
     ArtistComponent,
     NoimagePipe,

@@ -3,19 +3,22 @@ import { NewsapiservicesService } from '../service/newsapiservices.service';
 
 @Component({
   selector: 'app-technews',
-  templateUrl: './technews.component.html',
-  styleUrls: ['./technews.component.css']
+  templateUrl: './foxnews.component.html',
+  styleUrls: ['./foxnews.component.css']
 })
-export class TechnewsComponent implements OnInit {
+export class FoxnewsComponent implements OnInit {
 
   constructor(private _services:NewsapiservicesService) { }
 
   technewsDisplay:any = [];
+  page:number = 1;
+  totalLength:any;
 
   ngOnInit(): void {
 
-    this._services.techNews().subscribe((result)=>{
+    this._services.foxNews().subscribe((result)=>{
       this.technewsDisplay = result.articles;
+      this.totalLength = result.length;
     })
   }
 

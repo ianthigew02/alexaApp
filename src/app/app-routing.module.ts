@@ -6,8 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TopheadingComponent } from './topheading/topheading.component';
-import { BusinessnewsComponent } from './businessnews/businessnews.component';
-import { TechnewsComponent } from './technews/technews.component';
+import { CNNnewsComponent } from './cnn-news/cnn-news.component';
+import { FoxnewsComponent } from './foxnews/foxnews.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { AlarmHomeComponent } from './alarm-home/alarm-home.component';
@@ -18,13 +18,14 @@ import { GamesListComponent } from './components/games-list/games-list.component
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'login/home', component: HomeComponent },
   { path: 'profile', component: ProfileComponent },
   {path: 'home/todo', component: TodoListComponent},
   {path: 'login/register', component:RegisterComponent},
   {path: 'home/topheading', component: TopheadingComponent},
-  {path: 'home/topheading/businessnews', component: BusinessnewsComponent},
-  {path: 'home/topheading/technews', component: TechnewsComponent},
+  {path: 'home/topheading/cnn-news', component: CNNnewsComponent},
+  {path: 'home/topheading/foxnews', component: FoxnewsComponent},
+  {path: 'foxnews/home/topheading', component: TopheadingComponent},
   { path: 'home/search', component: SearchComponent },
   { path: 'artist/:id/search', component: SearchComponent },
   { path: 'artist/:id', component: ArtistComponent },

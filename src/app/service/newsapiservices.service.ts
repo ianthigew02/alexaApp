@@ -13,11 +13,11 @@ export class NewsapiservicesService {
   // newsApiUrl
   newsApiUrl = "https://newsapi.org/v2/top-headlines?sources=CNN,bloomberg,fox-news,newsy,cnbc,abc-news&sortBy=popularity&apiKey=bbbd56acf7054e27a34704667b4dc5b6";
 
-  // technewsapiurl
-  techApiUrL = "https://newsapi.org/v2/top-headlines?sources=fox-news&sortBy=popularity&apiKey=bbbd56acf7054e27a34704667b4dc5b6";
+  // foxnewsapiurl
+  foxApiUrL = "https://newsapi.org/v2/top-headlines?sources=fox-news&sortBy=popularity&apiKey=bbbd56acf7054e27a34704667b4dc5b6";
 
-  // businessnewsapiurl
-  businessApiUrL = "https://newsapi.org/v2/top-headlines?sources=CNN&sortBy=popularity&apiKey=bbbd56acf7054e27a34704667b4dc5b6";
+  // CNNnewsapiurl
+  CNNApiUrL = "https://newsapi.org/v2/top-headlines?sources=CNN&sortBy=popularity&apiKey=bbbd56acf7054e27a34704667b4dc5b6";
 
   // topheading()
   topHeading():Observable<any>
@@ -25,15 +25,15 @@ export class NewsapiservicesService {
       return this._http.get(this.newsApiUrl);
   }
 
-  // technews()
-  techNews():Observable<any>
+  // foxnews()
+  foxNews():Observable<any>
   {
-      return this._http.get(this.techApiUrL);
+      return this._http.get(this.foxApiUrL);
   }
 
-  // businessnews()
-  businessNews():Observable<any>
+  // CNNnews()
+  cnnNews():Observable<any>
   {
-      return this._http.get(this.businessApiUrL);
+      return this._http.get(this.CNNApiUrL);
   }
 }

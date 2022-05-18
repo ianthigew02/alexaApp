@@ -5,7 +5,7 @@ import { SpotifyService } from '../../service/spotify.service'
 @Component({
   selector: 'app-artist',
   templateUrl: './artist.component.html',
-  styleUrls: ['styles.styl']
+  styleUrls: ['artist.component.css']
 })
 export class ArtistComponent {
   artist: {[index: string]:any} = {}
