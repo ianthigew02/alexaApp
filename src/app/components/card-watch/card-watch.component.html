@@ -1,0 +1,43 @@
+<section class="card">
+
+  <div class="card__content">
+    <div class="card__header">
+
+      <input type="checkbox"
+      class="checkbox"
+      id="completed"
+      [checked]="item.checked"
+      (click)="completedItem()">
+      <label class="sr-only" for="completed">Completed</label>
+
+      <p
+        *ngIf="showEditInput; else showBlock"
+        class="card__description"
+        [class.card__description--completed]="item.completed">
+        {{ item.description }}
+      </p>
+
+      <ng-template #showBlock>
+        <label class="sr-only" for="alteration">Edit</label>
+        <input
+          class="input input-card"
+          type="text"
+          id="alteration"
+          [formControl]="editDescription"
+          (keyup.enter)="updateItem()"
+        />
+      </ng-template>
+
+      <div class="card__buttons">
+        <button class="button button--edit"
+        (click)="showEditInput = !showEditInput">
+          <fa-icon class="icon icon--edit" [icon]="faEdit"></fa-icon>
+        </button>
+
+        <button class="button button--delete" (click)="removeItem()">
+          <fa-icon class="icon icon--delete" [icon]="faTrash"></fa-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,15 +1,33 @@
 <h1 class="hi">My To-Do </h1>
+<div class="row align-items-top">
+  <div class="col">
+    <section class="container-list">
+      <div class="wrapper-list">
+        <h1 class="wrapper-list__title">{{ title }}</h1>
+      </div>
 
-<section class="container-list">
-  <div class="wrapper-list">
-    <h1 class="wrapper-list__title">{{ title }}</h1>
+      <app-input-card></app-input-card>
+
+      <ul>
+        <li *ngFor="let todoItem of todoList">
+          <app-card [item]="todoItem"> </app-card>
+        </li>
+      </ul>
+    </section>
   </div>
+  <div class="col">
+    <section class="container-list">
+      <div class="wrapper-list">
+        <h1 class="wrapper-list__title">{{ titleWatch }}</h1>
+      </div>
 
-  <app-input-card></app-input-card>
+      <app-input-card-watch></app-input-card-watch>
 
-  <ul>
-    <li *ngFor="let todoItem of todoList">
-      <app-card [item]="todoItem"> </app-card>
-    </li>
-  </ul>
-</section>
+      <ul>
+        <li *ngFor="let todoItem of todoListWatch">
+          <app-card-watch [item]="todoItem"> </app-card-watch>
+        </li>
+      </ul>
+    </section>
+  </div>
+</div>

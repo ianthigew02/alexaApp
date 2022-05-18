@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoCard } from 'src/app/interfaces/todo-card';
+import { TodoWatchCard } from 'src/app/interfaces/todo-card-watch';
+import { TodoListWatchService } from 'src/app/_services/todo-list-watch.service';
 import { TodoListService } from 'src/app/_services/todo-list.service';
 
 @Component({
@@ -8,13 +10,17 @@ import { TodoListService } from 'src/app/_services/todo-list.service';
   styleUrls: ['./todo-list.component.scss'],
 })
 export class TodoListComponent implements OnInit {
-  title = 'My To-Do List';
+  title = 'To Buy';
+  titleWatch= 'To Watch'
 
   todoList: TodoCard[] = [] as TodoCard[];
 
-  constructor(private todoListService: TodoListService) {}
+  todoListWatch: TodoWatchCard[] = [] as TodoWatchCard[];
+
+  constructor(private todoListService: TodoListService, private todoListWatchService: TodoListWatchService) {}
 
   ngOnInit(): void {
     this.todoList = this.todoListService.getTodoList();
+    this.todoListWatch = this.todoListWatchService.getTodoList();
   }
 }

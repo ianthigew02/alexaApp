@@ -1,0 +1,36 @@
+@import "../../../styles/variables";
+
+.form-group {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+
+  &__wrapper {
+    padding-left: 1rem;
+  }
+}
+
+.form-input {
+  height: 2.2rem;
+  width: 15rem;
+}
+
+.form-button {
+  border: none;
+  background-color: map-get($colors, "third-color");
+  width: 2.8rem;
+  border-radius: 50%;
+  height: 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: darken(map-get($colors, "third-color"), 8%);
+  }
+
+  .icon {
+    color: map-get($colors, "primary-color");
+    font-size: 1rem;
+  }
+}

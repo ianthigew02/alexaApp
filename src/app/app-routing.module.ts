@@ -14,11 +14,12 @@ import { AlarmHomeComponent } from './alarm-home/alarm-home.component';
 import { PrivacyComponent } from './components/privacy/privacy.component';
 import { GamesComponent } from './components/game/game.component';
 import { GamesListComponent } from './components/games-list/games-list.component';
+import { AuthGuard } from './_helpers/auth.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent ,canActivate: [AuthGuard]},
   { path: 'profile', component: ProfileComponent },
   {path: 'home/todo', component: TodoListComponent},
   {path: 'login/register', component:RegisterComponent},
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'artist/:id', component: ArtistComponent },
   { path: 'home/alarm-home', component: AlarmHomeComponent},
   { path: 'privacy', component: PrivacyComponent},
+  { path: 'profile/privacy', component: PrivacyComponent},
   { path:'games', component: GamesComponent},
   { path:'games/games-list', component: GamesListComponent},
   { path:'games-list/games', component: GamesComponent},

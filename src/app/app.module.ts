@@ -50,6 +50,8 @@ import { ErrorInterceptor } from './_helpers/error.interceptor';
 import { AlertComponent } from './components/alert/alert.component';
 import { GamesListComponent } from './components/games-list/games-list.component';
 import { GamesComponent } from './components/game/game.component';
+import { InputCardWatchComponent } from './components/input-card-watch/input-card-watch.component';
+import { CardWatchComponent } from './components/card-watch/card-watch.component';
 
 
 const MY_NATIVE_FORMATS = {
@@ -79,6 +81,8 @@ const MY_NATIVE_FORMATS = {
     ProfileComponent,
     InputCardComponent,
     CardComponent,
+    InputCardWatchComponent,
+    CardWatchComponent,
     TodoListComponent,
     SidebarComponent,
     TopheadingComponent,

@@ -9,7 +9,6 @@ import { AuthenticationService } from '../_services/authentication.service'
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  content?: string;
   currentUser: any;
 
   constructor(private userService: UserService,private authenticationService: AuthenticationService,

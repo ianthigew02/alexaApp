@@ -1,26 +1,26 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TodoListService } from 'src/app/_services/todo-list.service';
+import { TodoListWatchService } from 'src/app/_services/todo-list-watch.service';
 import { mockTodoList } from 'src/__mocks__/todoList.spec';
-import { CardComponent } from './card.component';
+import { CardWatchComponent } from './card-watch.component';
 
 describe('CardComponent', () => {
-  let component: CardComponent;
-  let fixture: ComponentFixture<CardComponent>;
-  let todoListService: jasmine.SpyObj<TodoListService>;
+  let component: CardWatchComponent;
+  let fixture: ComponentFixture<CardWatchComponent>;
+  let todoListService: jasmine.SpyObj<TodoListWatchService>;
 
   beforeEach(async () => {
-    todoListService = jasmine.createSpyObj('TodoListService', [
+    todoListService = jasmine.createSpyObj('TodoListWatchService', [
       'removeItemFromList',
       'saveTodoList',
     ]);
     await TestBed.configureTestingModule({
-      declarations: [CardComponent],
-      providers: [{ provide: TodoListService, useValue: todoListService }],
+      declarations: [CardWatchComponent],
+      providers: [{ provide: TodoListWatchService, useValue: todoListService }],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CardComponent);
+    fixture = TestBed.createComponent(CardWatchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

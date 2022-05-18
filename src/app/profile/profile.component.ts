@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { first } from 'rxjs';
 import { AuthenticationService } from '../_services/authentication.service';
 import { UserService } from '../_services/user.service';
@@ -14,7 +15,8 @@ export class ProfileComponent implements OnInit {
 
   constructor(
       private authenticationService: AuthenticationService,
-      private userService: UserService
+      private userService: UserService,
+      private router: Router
   ) {
       this.currentUser = this.authenticationService.currentUserValue;
   }
@@ -34,5 +36,10 @@ export class ProfileComponent implements OnInit {
       this.userService.getAll()
           .pipe(first())
           //.subscribe(users => this.users = users);
+  }
+
+  logout(): void {
+    this.authenticationService.logout();
+    this.router.navigate(['/login']);
   }
 }
